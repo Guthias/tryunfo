@@ -18,3 +18,12 @@ export default class Select extends Component {
     );
   }
 }
+
+Select.propTypes = {
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  options: PropTypes.isArrayOf(PropTypes.shape({
+    value: PropType.string.isRequired,
+    text: PropType.string.isRequired,
+  })).isRequired,
+};
