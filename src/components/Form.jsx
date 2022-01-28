@@ -13,11 +13,11 @@ export default class Form extends Component {
           text: 'Normal',
         },
         {
-          value: 'rare',
+          value: 'raro',
           text: 'Raro',
         },
         {
-          value: 'veryRare',
+          value: 'muito raro',
           text: 'Muito Raro',
         },
       ],

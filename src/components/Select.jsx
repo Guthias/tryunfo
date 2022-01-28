@@ -9,7 +9,7 @@ export default class Select extends Component {
       <div>
         <label htmlFor={ id }>
           { title }
-          <select id={ id }>
+          <select id={ id } data-testid={ `${id}-input` }>
             { options.map(({ value, text }) => (
               <option key={ value } value={ value }>{ text }</option>
             ))}
