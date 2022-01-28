@@ -9,7 +9,12 @@ export default class Input extends Component {
       <div>
         <label htmlFor={ id }>
           { title }
-          <input type={ type } id={ id } data-testid={ `${id}-input` } />
+
+          {
+            type === 'textarea'
+              ? <textarea id={ id } data-testid={ `${id}-input` } />
+              : <input type={ type } id={ id } data-testid={ `${id}-input` } />
+          }
         </label>
       </div>
     );
