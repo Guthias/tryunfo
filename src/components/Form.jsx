@@ -35,6 +35,8 @@ export default class Form extends Component {
         <Input type="number" title="Attr03" id="attr3" />
         <Input title="Imagem" id="image" />
         <Select title="Raridade" id="rare" options={ selectOptions } />
+        <Input title="Super Trunfo" type="checkbox" id="trunfo" />
+        <button type="submit" data-testid="save-button">Salvar</button>
       </form>
     );
   }
