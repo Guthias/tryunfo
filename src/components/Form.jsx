@@ -12,7 +12,6 @@ export default class Form extends Component {
         <Input type="number" title="Attr02" id="attr2" />
         <Input type="number" title="Attr03" id="attr3" />
         <Input title="Imagem" id="image" />
-        <Select />
       </form>
     );
   }
