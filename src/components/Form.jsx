@@ -36,7 +36,7 @@ export default class Form extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
-      hasTrunfo,
+      // hasTrunfo,
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick,
@@ -44,18 +44,68 @@ export default class Form extends Component {
 
     return (
       <form className="create-card-area">
-        <Input title="Nome" id="name" />
-        <Input type="textarea" title="Descrição" id="description" />
-        <Input type="number" title="Attr01" id="attr1" inline />
-        <Input type="number" title="Attr02" id="attr2" inline />
-        <Input type="number" title="Attr03" id="attr3" inline />
-        <Input title="Imagem" id="image" inline />
-        <Select title="Raridade" id="rare" options={ selectOptions } />
-        <Checkbox title="Super Trunfo" id="trunfo" />
+        <Input
+          title="Nome"
+          id="name"
+          value={ cardName }
+          onchange={ onInputChange }
+        />
+        <Input
+          type="textarea"
+          title="Descrição"
+          id="description"
+          value={ cardDescription }
+          onchange={ onInputChange }
+        />
+        <Input
+          type="number"
+          title="Attr01"
+          id="attr1"
+          inline
+          value={ cardAttr1 }
+          onchange={ onInputChange }
+        />
+        <Input
+          type="number"
+          title="Attr02"
+          id="attr2"
+          inline
+          value={ cardAttr2 }
+          onchange={ onInputChange }
+        />
+        <Input
+          type="number"
+          title="Attr03"
+          id="attr3"
+          inline
+          value={ cardAttr3 }
+          onchange={ onInputChange }
+        />
+        <Input
+          title="Imagem"
+          id="image"
+          inline
+          value={ cardImage }
+          onchange={ onInputChange }
+        />
+        <Select
+          title="Raridade"
+          id="rare"
+          value={ cardRare }
+          options={ selectOptions }
+        />
+        <Checkbox
+          title="Super Trunfo"
+          value={ cardTrunfo }
+          onchange={ onInputChange }
+          id="trunfo"
+        />
         <button
           className="form-button"
           type="submit"
           data-testid="save-button"
+          disabled={ isSaveButtonDisabled }
+          onClick={ onSaveButtonClick }
         >
           Salvar
         </button>
