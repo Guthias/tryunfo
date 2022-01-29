@@ -9,7 +9,7 @@ export default class Input extends Component {
       <div>
         <label className="create-card-label-checkbox" htmlFor={ id }>
           <input
-            className="create-card-input"
+            className="create-card-checkbox"
             type="checkbox"
             id={ id }
             data-testid={ `${id}-input` }
