@@ -27,6 +27,21 @@ export default class Form extends Component {
 
   render() {
     const { selectOptions } = this.state;
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+      hasTrunfo,
+      isSaveButtonDisabled,
+      onInputChange,
+      onSaveButtonClick,
+    } = this.props;
+
     return (
       <form className="create-card-area">
         <Input title="Nome" id="name" />
