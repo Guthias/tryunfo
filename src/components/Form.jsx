@@ -30,10 +30,10 @@ export default class Form extends Component {
       <form className="create-card-area">
         <Input title="Nome" id="name" />
         <Input type="textarea" title="Descrição" id="description" />
-        <Input type="number" title="Attr01" id="attr1" />
-        <Input type="number" title="Attr02" id="attr2" />
-        <Input type="number" title="Attr03" id="attr3" />
-        <Input title="Imagem" id="image" />
+        <Input type="number" title="Attr01" id="attr1" inline />
+        <Input type="number" title="Attr02" id="attr2" inline />
+        <Input type="number" title="Attr03" id="attr3" inline />
+        <Input title="Imagem" id="image" inline />
         <Select title="Raridade" id="rare" options={ selectOptions } />
         <Input title="Super Trunfo" type="checkbox" id="trunfo" />
         <button type="submit" data-testid="save-button">Salvar</button>

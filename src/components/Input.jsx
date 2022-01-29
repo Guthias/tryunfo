@@ -11,7 +11,7 @@ export default class Input extends Component {
 
     return (
       <div>
-        <label className={ `create-card-label ${isInline(inline)}` } htmlFor={ id }>
+        <label className={ `create-card-label ${this.isInline(inline)}` } htmlFor={ id }>
           { title }
 
           {

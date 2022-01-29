@@ -25,6 +25,7 @@ code {
 
 .create-card-input {
   border: 1px solid black;
+  width: 100%;
   padding: 5px 10px;
   font-size: 16px;
   outline: none;
@@ -48,4 +49,10 @@ code {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 700;
+}
+
+.create-card-label.inline {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
