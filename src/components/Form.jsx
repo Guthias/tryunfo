@@ -36,7 +36,13 @@ export default class Form extends Component {
         <Input title="Imagem" id="image" inline />
         <Select title="Raridade" id="rare" options={ selectOptions } />
         <Input title="Super Trunfo" type="checkbox" id="trunfo" />
-        <button type="submit" data-testid="save-button">Salvar</button>
+        <button
+          className="form-button"
+          type="submit"
+          data-testid="save-button"
+        >
+          Salvar
+        </button>
       </form>
     );
   }
