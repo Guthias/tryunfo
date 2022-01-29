@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Input from './Input';
 import Select from './Select';
+import Checkbox from './Checkbox';
 
 export default class Form extends Component {
   constructor() {
@@ -35,7 +36,7 @@ export default class Form extends Component {
         <Input type="number" title="Attr03" id="attr3" inline />
         <Input title="Imagem" id="image" inline />
         <Select title="Raridade" id="rare" options={ selectOptions } />
-        <Input title="Super Trunfo" type="checkbox" id="trunfo" />
+        <Checkbox title="Super Trunfo" id="trunfo" />
         <button
           className="form-button"
           type="submit"
