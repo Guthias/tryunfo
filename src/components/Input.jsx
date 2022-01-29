@@ -7,13 +7,19 @@ export default class Input extends Component {
 
     return (
       <div>
-        <label htmlFor={ id }>
+        <label className="create-card-label" htmlFor={ id }>
           { title }
 
           {
             type === 'textarea'
-              ? <textarea id={ id } data-testid={ `${id}-input` } />
-              : <input type={ type } id={ id } data-testid={ `${id}-input` } />
+              ? <textarea className="create-card-textarea" id={ id } data-testid={ `${id}-input` } />
+              : (
+                <input
+                  className="create-card-input"
+                  type={ type }
+                  id={ id }
+                  data-testid={ `${id}-input` }
+                />)
           }
         </label>
       </div>

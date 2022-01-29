@@ -22,3 +22,30 @@ code {
   display: flex;
   flex-direction: column;
 }
+
+.create-card-input {
+  border: 1px solid black;
+  padding: 5px 10px;
+  font-size: 16px;
+  outline: none;
+  margin-top: 5px;
+}
+
+.create-card-textarea {
+  border: 1px solid black;
+  resize: none;
+  height: 100px;
+  padding: 5px 10px;
+  font-size: 16px;
+  outline: none;
+  margin-top: 5px;
+}
+
+.create-card-label {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
