@@ -92,12 +92,13 @@ export default class Form extends Component {
         <Select
           title="Raridade"
           id="rare"
-          value={ cardRare }
+          onchange={ onInputChange }
+          selected={ cardRare }
           options={ selectOptions }
         />
         <Checkbox
           title="Super Trunfo"
-          value={ cardTrunfo }
+          checked={ cardTrunfo }
           onchange={ onInputChange }
           id="trunfo"
         />
