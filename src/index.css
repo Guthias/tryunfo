@@ -23,7 +23,7 @@ code {
   flex-direction: column;
 }
 
-.create-card-input {
+.create-card-input, .create-card-select {
   border: 1px solid black;
   width: 100%;
   padding: 5px 10px;

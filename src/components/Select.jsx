@@ -7,9 +7,9 @@ export default class Select extends Component {
 
     return (
       <div>
-        <label htmlFor={ id }>
+        <label className="create-card-label" htmlFor={ id }>
           { title }
-          <select id={ id } data-testid={ `${id}-input` }>
+          <select className="create-card-select" id={ id } data-testid={ `${id}-input` }>
             { options.map(({ value, text }) => (
               <option key={ value } value={ value }>{ text }</option>
             ))}
