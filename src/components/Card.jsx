@@ -2,47 +2,50 @@ import React, { Component } from 'react';
 
 export default class Card extends Component {
   render() {
+    const {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
+    } = this.props;
+
     return (
       <div className="card">
         <div className="card-name-area">
-          <span>Piplup</span>
+          <span>{ cardName }</span>
         </div>
         <div className="card-image-area">
-          <img className="card-image" src="https://archives.bulbagarden.net/media/upload/4/42/Dawn_Piplup.png" alt="card-name" />
+          <img className="card-image" src={ cardImage } alt={ cardName } />
         </div>
         <div className="card-description-area">
-          <span className="card-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-            a nam sequi suscipit modi consequatur ducimus quas quidem sit provident.
-          </span>
+          <span className="card-description">{ cardDescription }</span>
         </div>
         <div className="card-status-area">
           <div className="card-status">
-            <span className="card-attribute">
-              Attr1
-            </span>
-            <span className="card-attribute-value">
-              000
-            </span>
+            <span className="card-attribute">Attr1</span>
+            <span className="card-attribute-value">{ cardAttr1 }</span>
           </div>
 
           <div className="card-status">
-            <span className="card-attribute">
-              Attr2
-            </span>
-            <span className="card-attribute-value">
-              000
-            </span>
+            <span className="card-attribute">Attr2</span>
+            <span className="card-attribute-value">{ cardAttr2 }</span>
           </div>
 
           <div className="card-status">
-            <span className="card-attribute">
-              Attr3
-            </span>
-            <span className="card-attribute-value">
-              000
-            </span>
+            <span className="card-attribute">Attr3</span>
+            <span className="card-attribute-value">{ cardAttr3 }</span>
           </div>
+
+          <div className="card-status">
+            <span className="card-attribute">Rarity</span>
+            <span className="card-attribute-value">{ cardRare }</span>
+          </div>
+
+          {cardTrunfo && <div className="card-trunfo">Super Trunfo</div>}
         </div>
       </div>
     );
