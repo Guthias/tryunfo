@@ -43,7 +43,7 @@ class App extends React.Component {
       isSaveButtonDisabled } = this.state;
 
     return (
-      <div>
+      <div className="create-card-area">
         <Form
           cardName={ name }
           cardDescription={ description }
@@ -57,17 +57,18 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
           onSaveButtonClick={ this.onSaveButtonClick }
         />
-
-        <Card
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rare }
-          cardTrunfo={ trunfo }
-        />
+        <div className="card-preview-area">
+          <Card
+            cardName={ name }
+            cardDescription={ description }
+            cardAttr1={ attr1 }
+            cardAttr2={ attr2 }
+            cardAttr3={ attr3 }
+            cardImage={ image }
+            cardRare={ rare }
+            cardTrunfo={ trunfo }
+          />
+        </div>
       </div>
     );
   }

@@ -44,7 +44,7 @@ export default class Form extends Component {
     } = this.props;
 
     return (
-      <form className="create-card-area">
+      <form className="create-card-form">
         <Input
           title="Nome"
           id="name"

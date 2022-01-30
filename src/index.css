@@ -16,7 +16,7 @@ code {
     monospace;
 }
 
-.create-card-area {
+.create-card-form {
   width: 50%;
   padding: 40px 80px ;
   display: flex;
@@ -45,7 +45,7 @@ code {
 .create-card-label {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 100%;
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: 700;
@@ -59,7 +59,7 @@ code {
 
 .form-button {
   background-color: #CE2211;
-  width: 70%;
+  width: 100%;
   color: white;
   font-size: 22px;
   padding: 10px;
@@ -77,10 +77,24 @@ code {
 .create-card-label-checkbox {
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 100%;
   font-size: 18px;
   gap: 10px;
   margin-bottom: 10px;
   font-weight: 700;
   align-items: center;
+}
+
+.create-card-area {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.card-preview-area {
+  background-color: #191919;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
