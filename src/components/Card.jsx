@@ -17,36 +17,67 @@ export default class Card extends Component {
     return (
       <div className="card">
         <div className="card-name-area">
-          <span>{ cardName }</span>
+          <span data-testid="name-card">{ cardName }</span>
         </div>
         <div className="card-image-area">
-          <img className="card-image" src={ cardImage } alt={ cardName } />
+          <img
+            className="card-image"
+            data-testid="image-card"
+            src={ cardImage }
+            alt={ cardName }
+          />
         </div>
         <div className="card-description-area">
-          <span className="card-description">{ cardDescription }</span>
+          <span
+            className="card-description"
+            data-testid="description-card"
+          >
+            { cardDescription }
+          </span>
         </div>
         <div className="card-status-area">
           <div className="card-status">
             <span className="card-attribute">Attr1</span>
-            <span className="card-attribute-value">{ cardAttr1 }</span>
+            <span
+              className="card-attribute-value"
+              data-testid="attr1-card"
+            >
+              { cardAttr1 }
+            </span>
           </div>
 
           <div className="card-status">
             <span className="card-attribute">Attr2</span>
-            <span className="card-attribute-value">{ cardAttr2 }</span>
+            <span
+              className="card-attribute-value"
+              data-testid="attr2-card"
+            >
+              { cardAttr2 }
+            </span>
           </div>
 
           <div className="card-status">
             <span className="card-attribute">Attr3</span>
-            <span className="card-attribute-value">{ cardAttr3 }</span>
+            <span
+              className="card-attribute-value"
+              data-testid="attr3-card"
+            >
+              { cardAttr3 }
+            </span>
           </div>
 
           <div className="card-status">
             <span className="card-attribute">Rarity</span>
-            <span className="card-attribute-value">{ cardRare }</span>
+            <span
+              className="card-attribute-value"
+              data-testid="rare-card"
+            >
+              { cardRare }
+            </span>
           </div>
 
-          {cardTrunfo && <div className="card-trunfo">Super Trunfo</div>}
+          { cardTrunfo
+          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>}
         </div>
       </div>
     );
