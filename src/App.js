@@ -25,9 +25,21 @@ class App extends React.Component {
       name,
       description,
       image,
+      attr1,
+      attr2,
+      attr3,
     } = this.state;
 
-    const allValid = !(name && description && image);
+    const maxAttr = 90;
+    const maxTotalAttr = 210;
+
+    // Source: https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l
+    const notSmallAttr = Math.min(+attr1, +attr2, +attr3) >= 0;
+    const notBigAttr = Math.max(+attr1, +attr2, +attr3) <= maxAttr;
+    const validTotaAttrSum = (+attr1 + +attr2 + +attr3) <= maxTotalAttr;
+    const validAttr = notSmallAttr && notBigAttr && validTotaAttrSum;
+
+    const allValid = !(name && description && image && validAttr);
 
     this.setState({
       isSaveButtonDisabled: allValid,
