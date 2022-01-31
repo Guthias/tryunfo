@@ -71,6 +71,13 @@ class App extends React.Component {
     const newCards = cards;
     newCards.push(card);
     this.setState({
+      name: '',
+      description: '',
+      attr1: '0',
+      attr2: '0',
+      attr3: '0',
+      image: '',
+      rare: 'normal',
       cards: newCards,
     });
   }
