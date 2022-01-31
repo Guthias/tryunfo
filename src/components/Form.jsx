@@ -96,12 +96,14 @@ export default class Form extends Component {
           selected={ cardRare }
           options={ selectOptions }
         />
-        <Checkbox
-          title="Super Trunfo"
-          checked={ cardTrunfo }
-          onchange={ onInputChange }
-          id="trunfo"
-        />
+        { hasTrunfo ? <span>Você já tem um Super Trunfo em seu baralho</span>
+          : (
+            <Checkbox
+              title="Super Trunfo"
+              checked={ cardTrunfo }
+              onchange={ onInputChange }
+              id="trunfo"
+            />)}
         <button
           className="form-button"
           type="submit"
