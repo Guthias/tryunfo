@@ -16,7 +16,7 @@ class App extends React.Component {
       image: '',
       rare: 'normal',
       trunfo: false,
-      isSaveButtonDisabled: false,
+      isSaveButtonDisabled: true,
     };
   }
 

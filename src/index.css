@@ -74,6 +74,11 @@ code {
   background-color: #E54222;
 }
 
+.form-button:disabled {
+  cursor: default;
+  background-color: gray;
+}
+
 .create-card-label-checkbox {
   display: flex;
   flex-direction: row;
