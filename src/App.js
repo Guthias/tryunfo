@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import Deck from './components/Deck';
 import './index.css';
 
 class App extends React.Component {
@@ -103,23 +104,9 @@ class App extends React.Component {
       isSaveButtonDisabled } = this.state;
 
     return (
-      <div className="create-card-area">
-        <Form
-          cardName={ name }
-          cardDescription={ description }
-          cardAttr1={ attr1 }
-          cardAttr2={ attr2 }
-          cardAttr3={ attr3 }
-          cardImage={ image }
-          cardRare={ rare }
-          cardTrunfo={ trunfo }
-          hasTrunfo={ hasTrunfo }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onInputChange={ this.onInputChange }
-          onSaveButtonClick={ this.onSaveButtonClick }
-        />
-        <div className="card-preview-area">
-          <Card
+      <>
+        <div className="create-card-area">
+          <Form
             cardName={ name }
             cardDescription={ description }
             cardAttr1={ attr1 }
@@ -128,9 +115,26 @@ class App extends React.Component {
             cardImage={ image }
             cardRare={ rare }
             cardTrunfo={ trunfo }
+            hasTrunfo={ hasTrunfo }
+            isSaveButtonDisabled={ isSaveButtonDisabled }
+            onInputChange={ this.onInputChange }
+            onSaveButtonClick={ this.onSaveButtonClick }
           />
+          <div className="card-preview-area">
+            <Card
+              cardName={ name }
+              cardDescription={ description }
+              cardAttr1={ attr1 }
+              cardAttr2={ attr2 }
+              cardAttr3={ attr3 }
+              cardImage={ image }
+              cardRare={ rare }
+              cardTrunfo={ trunfo }
+            />
+          </div>
         </div>
-      </div>
+        <Deck />
+      </>
     );
   }
 }
