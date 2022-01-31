@@ -23,9 +23,11 @@ class App extends React.Component {
   allInputsValid = () => {
     const {
       name,
+      description,
+      image,
     } = this.state;
 
-    const allValid = !name;
+    const allValid = !(name && description && image);
 
     this.setState({
       isSaveButtonDisabled: allValid,
