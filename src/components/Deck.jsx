@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Card from './Card';
 
 export default class Deck extends Component {
@@ -23,3 +24,16 @@ export default class Deck extends Component {
     );
   }
 }
+
+Deck.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    attr1: PropTypes.string.isRequired,
+    attr2: PropTypes.string.isRequired,
+    attr3: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    rare: PropTypes.string.isRequired,
+    trunfo: PropTypes.bool.isRequired,
+  })).isRequired,
+};
