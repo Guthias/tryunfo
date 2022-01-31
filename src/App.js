@@ -20,11 +20,23 @@ class App extends React.Component {
     };
   }
 
+  allInputsValid = () => {
+    const {
+      name,
+    } = this.state;
+
+    const allValid = !name;
+
+    this.setState({
+      isSaveButtonDisabled: allValid,
+    });
+  }
+
   onInputChange = ({ target }) => {
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
       [target.id]: value,
-    });
+    }, this.allInputsValid);
   }
 
   onSaveButtonClick = ({ target }) => {
