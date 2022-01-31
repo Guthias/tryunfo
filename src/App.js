@@ -17,6 +17,7 @@ class App extends React.Component {
       rare: 'normal',
       trunfo: false,
       isSaveButtonDisabled: true,
+      cards: [],
     };
   }
 
@@ -53,8 +54,25 @@ class App extends React.Component {
     }, this.allInputsValid);
   }
 
-  onSaveButtonClick = ({ target }) => {
-    console.log(target);
+  onSaveButtonClick = (event) => {
+    event.preventDefault();
+    const { name,
+      description,
+      attr1,
+      attr2,
+      attr3,
+      image,
+      rare,
+      trunfo,
+      cards,
+    } = this.state;
+
+    const card = [{ name, description, attr1, attr2, attr3, image, rare, trunfo }];
+    const newCards = cards;
+    newCards.push(card);
+    this.setState({
+      cards: newCards,
+    });
   }
 
   render() {
