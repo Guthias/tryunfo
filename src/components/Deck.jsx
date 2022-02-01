@@ -14,7 +14,7 @@ export default class Deck extends Component {
   }
 
   render() {
-    const { nameFilter } = this.state;
+    const { nameFilter, rarityFilter } = this.state;
     const { cards, deleteCard } = this.props;
     return (
       <div className="deck-area">
@@ -31,10 +31,26 @@ export default class Deck extends Component {
             className="deck-card-input"
             placeholder="Nome da Carta"
           />
+
+          <select
+            type="text"
+            value={ rarityFilter }
+            id="rarityFilter"
+            onChange={ this.handdleChange }
+            data-testid="rare-filter"
+            className="deck-card-input"
+          >
+            <option value="">todas</option>
+            <option value="normal">normal</option>
+            <option value="raro">rara</option>
+            <option value="muito raro">muito raro</option>
+          </select>
+
         </div>
         <div className="deck-cards">
           { cards
             .filter(({ name }) => name.includes(nameFilter))
+            .filter(({ rare }) => !rarityFilter || rare === rarityFilter)
             .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
               <CardOnDeck
                 key={ name }
