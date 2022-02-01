@@ -7,10 +7,11 @@ export default class CardOnDeck extends Component {
     const { deleteCard } = this.props;
 
     return (
-      <>
+      <div className="card-on-deck">
         <Card { ...this.props } />
         <div className="card-button-area">
           <button
+            className="delete-card-button"
             type="button"
             data-testid="delete-button"
             onClick={ deleteCard }
@@ -18,7 +19,7 @@ export default class CardOnDeck extends Component {
             Excluir
           </button>
         </div>
-      </>
+      </div>
     );
   }
 }
