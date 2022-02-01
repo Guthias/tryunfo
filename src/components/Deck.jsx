@@ -19,6 +19,13 @@ export default class Deck extends Component {
   render() {
     const { nameFilter, rarityFilter, trunfoFilter } = this.state;
     const { cards, deleteCard } = this.props;
+    const filteredCards = trunfoFilter
+      ? cards.filter(({ trunfo }) => trunfo)
+      : cards
+        .filter(({ name }) => name.includes(nameFilter))
+        .filter(({ rare }) => !rarityFilter || rare === rarityFilter);
+    console.log(filteredCards);
+
     return (
       <div className="deck-area">
         <div className="deck-card-filters">
@@ -33,6 +40,7 @@ export default class Deck extends Component {
             data-testid="name-filter"
             className="deck-card-input"
             placeholder="Nome da Carta"
+            disabled={ trunfoFilter }
           />
 
           <select
@@ -42,6 +50,7 @@ export default class Deck extends Component {
             onChange={ this.handdleChange }
             data-testid="rare-filter"
             className="deck-card-input"
+            disabled={ trunfoFilter }
           >
             <option value="">todas</option>
             <option value="normal">normal</option>
@@ -61,22 +70,22 @@ export default class Deck extends Component {
           </label>
         </div>
         <div className="deck-cards">
-          { cards
-            .filter(({ name }) => name.includes(nameFilter))
-            .filter(({ rare }) => !rarityFilter || rare === rarityFilter)
-            .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
-              <CardOnDeck
-                key={ name }
-                cardName={ name }
-                cardDescription={ description }
-                cardAttr1={ attr1 }
-                cardAttr2={ attr2 }
-                cardAttr3={ attr3 }
-                cardImage={ image }
-                cardRare={ rare }
-                cardTrunfo={ trunfo }
-                deleteCard={ () => deleteCard(name) }
-              />))}
+          {
+            filteredCards
+              .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
+                <CardOnDeck
+                  key={ name }
+                  cardName={ name }
+                  cardDescription={ description }
+                  cardAttr1={ attr1 }
+                  cardAttr2={ attr2 }
+                  cardAttr3={ attr3 }
+                  cardImage={ image }
+                  cardRare={ rare }
+                  cardTrunfo={ trunfo }
+                  deleteCard={ () => deleteCard(name) }
+                />))
+          }
         </div>
       </div>
     );
