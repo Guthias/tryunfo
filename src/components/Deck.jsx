@@ -37,4 +37,5 @@ Deck.propTypes = {
     rare: PropTypes.string.isRequired,
     trunfo: PropTypes.bool.isRequired,
   })).isRequired,
+  deleteCard: PropTypes.func.isRequired,
 };
