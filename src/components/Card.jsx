@@ -58,19 +58,6 @@ export default class Card extends Component {
               { cardAttr3 }
             </span>
           </div>
-
-          {/* <div className="card-status">
-            <span className="card-attribute">Rarity</span>
-            <span
-              className="card-attribute-value"
-              data-testid="rare-card"
-            >
-              { cardRare }
-            </span>
-          </div>
-
-          { cardTrunfo
-          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>} */}
         </div>
 
         <div className="card-description-area">
@@ -80,6 +67,17 @@ export default class Card extends Component {
           >
             { cardDescription }
           </span>
+        </div>
+
+        <div className="card-hidden-info">
+          <span
+            className="card-attribute-value"
+            data-testid="rare-card"
+          >
+            { cardRare }
+          </span>
+          { cardTrunfo
+          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>}
         </div>
       </div>
     );
