@@ -220,6 +220,7 @@ code {
   background-color: rgba(255, 255, 255, 0.5);
   opacity: 0;
   transition: all ease-in-out 0.5s;
+  overflow: hidden;
 }
 
 .card-button-area:hover {
@@ -238,6 +239,11 @@ code {
   border: none;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
+  margin-top: 400px;
+}
+
+.card-button-area:hover .delete-card-button {
+  margin-top: 0;
 }
 
 .delete-card-button:hover {
