@@ -3,7 +3,18 @@ import PropTypes from 'prop-types';
 import CardOnDeck from './CardOnDeck';
 
 export default class Deck extends Component {
+  state = {
+    nameFilter: '',
+  };
+
+  handdleChange = ({ target }) => {
+    this.setState({
+      [target.id]: target.value,
+    });
+  }
+
   render() {
+    const { nameFilter } = this.state;
     const { cards, deleteCard } = this.props;
     return (
       <div className="deck-area">
@@ -13,6 +24,9 @@ export default class Deck extends Component {
           <h3>Filtros de Busca</h3>
           <input
             type="text"
+            value={ nameFilter }
+            id="nameFilter"
+            onChange={ this.handdleChange }
             data-testid="name-filter"
             className="deck-card-input"
             placeholder="Nome da Carta"
@@ -20,6 +34,7 @@ export default class Deck extends Component {
         </div>
         <div className="deck-cards">
           { cards
+            .filter(({ name }) => name.includes(nameFilter))
             .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
               <CardOnDeck
                 key={ name }
