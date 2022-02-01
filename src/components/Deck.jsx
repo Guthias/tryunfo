@@ -5,16 +5,19 @@ import CardOnDeck from './CardOnDeck';
 export default class Deck extends Component {
   state = {
     nameFilter: '',
+    rarityFilter: '',
+    trunfoFilter: false,
   };
 
   handdleChange = ({ target }) => {
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     this.setState({
-      [target.id]: target.value,
+      [target.id]: value,
     });
   }
 
   render() {
-    const { nameFilter, rarityFilter } = this.state;
+    const { nameFilter, rarityFilter, trunfoFilter } = this.state;
     const { cards, deleteCard } = this.props;
     return (
       <div className="deck-area">
@@ -46,6 +49,16 @@ export default class Deck extends Component {
             <option value="muito raro">muito raro</option>
           </select>
 
+          <label htmlFor="trunfoFilter">
+            <input
+              id="trunfoFilter"
+              type="checkbox"
+              data-testid="trunfo-filter"
+              checked={ trunfoFilter }
+              onChange={ this.handdleChange }
+            />
+            Super Trunfo
+          </label>
         </div>
         <div className="deck-cards">
           { cards
