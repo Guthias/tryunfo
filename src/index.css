@@ -249,3 +249,35 @@ code {
 .delete-card-button:hover {
   background-color: #E54222;
 }
+
+.deck-area {
+  display: flex;
+}
+
+.deck-cards {
+  padding: 70px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 70px;
+  min-height: 100vh;
+}
+
+.deck-card-filters {
+  display: flex;
+  flex-direction: column;
+  align-content: center;  
+  text-align: center;
+  padding: 10px;
+}
+
+.deck-card-input {
+  width: 100%;
+  font-size: 16px;
+  padding: 5px 10px;
+  text-align: center;
+  outline: 0;
+  border: 2px solid gray;
+  border-radius: 8px;
+}
