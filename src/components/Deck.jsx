@@ -4,7 +4,7 @@ import CardOnDeck from './CardOnDeck';
 
 export default class Deck extends Component {
   render() {
-    const { cards } = this.props;
+    const { cards, deleteCard } = this.props;
     return (
       <div className="deck-area">
         <h1>Todas as Cartas</h1>
@@ -19,6 +19,7 @@ export default class Deck extends Component {
             cardImage={ image }
             cardRare={ rare }
             cardTrunfo={ trunfo }
+            deleteCard={ deleteCard }
           />))}
       </div>
     );

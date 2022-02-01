@@ -91,6 +91,10 @@ class App extends React.Component {
     });
   }
 
+  deleteCard = (event) => {
+    console.log(event);
+  }
+
   render() {
     const { name,
       description,
@@ -134,7 +138,7 @@ class App extends React.Component {
             />
           </div>
         </div>
-        <Deck cards={ cards } />
+        <Deck cards={ cards } deleteCard={ this.deleteCard } />
       </>
     );
   }

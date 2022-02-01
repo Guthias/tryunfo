@@ -12,6 +12,7 @@ export default class CardOnDeck extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      deleteCard,
     } = this.props;
 
     return (
@@ -78,6 +79,10 @@ export default class CardOnDeck extends Component {
 
           { cardTrunfo
           && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>}
+        </div>
+
+        <div className="card-button-area">
+          <button type="button" onClick={ deleteCard }>Excluir</button>
         </div>
       </div>
     );
