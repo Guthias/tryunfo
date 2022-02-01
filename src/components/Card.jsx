@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class Card extends Component {
+  cardRarity = (rarity, trunfo) => {
+    if (trunfo) return 'legendary';
+    switch (rarity) {
+    case 'raro': return 'rare';
+    case 'muito raro': return 'epic';
+    default: return '';
+    }
+  }
+
   render() {
     const {
       cardName,
@@ -15,7 +24,7 @@ export default class Card extends Component {
     } = this.props;
 
     return (
-      <div className="card">
+      <div className={ `card ${this.cardRarity(cardRare, cardTrunfo)} ` }>
         <div className="card-name-area">
           <span data-testid="name-card">{ cardName }</span>
         </div>

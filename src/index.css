@@ -111,20 +111,21 @@ code {
   border-radius: 8px;
 }
 
-.card-green {
+.card.rare {
   box-shadow: 0 0 25px 9px #52c234;
   outline: 1px solid #52c234;
 }
 
-.card.purple {
+.card.epic {
+  box-shadow: 0 0 25px 9px #2948ff;
+  outline: 1px solid #2948ff;
+}
+
+.card.legendary {
   box-shadow: 0 0 25px 9px #8E2DE2;
   outline: 1px solid #8E2DE2;
 }
 
-.card.legendary {
-  box-shadow: 0 0 25px 9px #2948ff;
-  outline: 1px solid #2948ff;
-}
 
 .card-image-area {
   position: relative;
