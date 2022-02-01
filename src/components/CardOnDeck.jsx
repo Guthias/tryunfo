@@ -82,7 +82,13 @@ export default class CardOnDeck extends Component {
         </div>
 
         <div className="card-button-area">
-          <button type="button" onClick={ deleteCard }>Excluir</button>
+          <button
+            type="button"
+            data-testid="delete-button"
+            onClick={ deleteCard }
+          >
+            Excluir
+          </button>
         </div>
       </div>
     );
