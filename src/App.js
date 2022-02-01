@@ -80,6 +80,7 @@ class App extends React.Component {
       attr3: '0',
       image: '',
       rare: 'normal',
+      trunfo: false,
       cards: newCards,
     }, this.verifyTrunfo);
   }
