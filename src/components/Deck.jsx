@@ -7,20 +7,33 @@ export default class Deck extends Component {
     const { cards, deleteCard } = this.props;
     return (
       <div className="deck-area">
-        <h1>Todas as Cartas</h1>
-        { cards.map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
-          <CardOnDeck
-            key={ name }
-            cardName={ name }
-            cardDescription={ description }
-            cardAttr1={ attr1 }
-            cardAttr2={ attr2 }
-            cardAttr3={ attr3 }
-            cardImage={ image }
-            cardRare={ rare }
-            cardTrunfo={ trunfo }
-            deleteCard={ () => deleteCard(name) }
-          />))}
+        <div className="deck-card-filters">
+          <h2>Todas as Cartas</h2>
+
+          <h3>Filtros de Busca</h3>
+          <input
+            type="text"
+            data-testid="name-filter"
+            className="deck-card-input"
+            placeholder="Nome da Carta"
+          />
+        </div>
+        <div className="deck-cards">
+          { cards
+            .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
+              <CardOnDeck
+                key={ name }
+                cardName={ name }
+                cardDescription={ description }
+                cardAttr1={ attr1 }
+                cardAttr2={ attr2 }
+                cardAttr3={ attr3 }
+                cardImage={ image }
+                cardRare={ rare }
+                cardTrunfo={ trunfo }
+                deleteCard={ () => deleteCard(name) }
+              />))}
+        </div>
       </div>
     );
   }
