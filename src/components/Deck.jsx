@@ -19,7 +19,7 @@ export default class Deck extends Component {
             cardImage={ image }
             cardRare={ rare }
             cardTrunfo={ trunfo }
-            deleteCard={ deleteCard }
+            deleteCard={ () => deleteCard(name) }
           />))}
       </div>
     );
