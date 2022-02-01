@@ -27,17 +27,10 @@ export default class Card extends Component {
             alt={ cardName }
           />
         </div>
-        <div className="card-description-area">
-          <span
-            className="card-description"
-            data-testid="description-card"
-          >
-            { cardDescription }
-          </span>
-        </div>
+
         <div className="card-status-area">
           <div className="card-status">
-            <span className="card-attribute">Attr1</span>
+            <span className="card-attribute">ATTACK</span>
             <span
               className="card-attribute-value"
               data-testid="attr1-card"
@@ -47,7 +40,7 @@ export default class Card extends Component {
           </div>
 
           <div className="card-status">
-            <span className="card-attribute">Attr2</span>
+            <span className="card-attribute">DEFENSE</span>
             <span
               className="card-attribute-value"
               data-testid="attr2-card"
@@ -57,7 +50,7 @@ export default class Card extends Component {
           </div>
 
           <div className="card-status">
-            <span className="card-attribute">Attr3</span>
+            <span className="card-attribute">SPEED</span>
             <span
               className="card-attribute-value"
               data-testid="attr3-card"
@@ -66,7 +59,7 @@ export default class Card extends Component {
             </span>
           </div>
 
-          <div className="card-status">
+          {/* <div className="card-status">
             <span className="card-attribute">Rarity</span>
             <span
               className="card-attribute-value"
@@ -77,7 +70,16 @@ export default class Card extends Component {
           </div>
 
           { cardTrunfo
-          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>}
+          && <div className="card-trunfo" data-testid="trunfo-card"> Super Trunfo </div>} */}
+        </div>
+
+        <div className="card-description-area">
+          <span
+            className="card-description"
+            data-testid="description-card"
+          >
+            { cardDescription }
+          </span>
         </div>
       </div>
     );

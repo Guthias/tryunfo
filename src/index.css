@@ -122,3 +122,63 @@ code {
   height: 100%;
   object-fit: cover;
 }
+
+.card-name-area {
+  background-color: #CE2211;
+  color: white;
+  text-align: center;
+  height: 40px;
+  word-wrap: normal;
+  overflow: hidden;
+  padding: 5px 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card-description-area {
+  background-color: #191919;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  padding: 5px 10px;
+  overflow: hidden;
+  font-size: 14px;
+  display: flex;
+  height: 95px;
+  align-items: center;
+}
+
+.card-description {
+  display: block;
+  width: 100%;
+  max-height: 100%;
+  word-wrap: break-word;
+}
+
+.card-status-area {
+  display: flex;
+  flex-direction: row;
+  padding: 5px 0;
+  background-color:  #191919;
+  color: white;
+}
+
+.card-status {
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-attribute {
+  width: 100%;
+  font-weight: 700;
+  color: #CE2211;
+}
+
+.card-attribute-value {
+  width: 100%;
+  font-weight: 700;
+  font-size: 22px;
+}
