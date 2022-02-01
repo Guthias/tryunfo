@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Card from './Card';
+import CardOnDeck from './CardOnDeck';
 
 export default class Deck extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class Deck extends Component {
       <div className="deck-area">
         <h1>Todas as Cartas</h1>
         { cards.map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
-          <Card
+          <CardOnDeck
             key={ name }
             cardName={ name }
             cardDescription={ description }
