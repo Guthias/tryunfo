@@ -100,9 +100,9 @@ class App extends React.Component {
     });
   }
 
-  deleteCard = (cardName) => {
+  deleteCard = (deletedCardName) => {
     this.setState((prevState) => ({
-      cards: prevState.cards.filter(({ name }) => name !== cardName),
+      cards: prevState.cards.filter(({ cardName }) => cardName !== deletedCardName),
     }), this.verifyTrunfo);
   }
 
