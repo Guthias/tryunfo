@@ -25,24 +25,24 @@ class App extends React.Component {
 
   allInputsValid = () => {
     const {
-      name,
-      description,
-      image,
-      attr1,
-      attr2,
-      attr3,
+      cardName,
+      cardDescription,
+      cardImage,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
     } = this.state;
 
     const maxAttr = 90;
     const maxTotalAttr = 210;
 
     // Source: https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l
-    const notSmallAttr = Math.min(+attr1, +attr2, +attr3) >= 0;
-    const notBigAttr = Math.max(+attr1, +attr2, +attr3) <= maxAttr;
-    const validTotaAttrSum = (+attr1 + +attr2 + +attr3) <= maxTotalAttr;
+    const notSmallAttr = Math.min(+cardAttr1, +cardAttr2, +cardAttr3) >= 0;
+    const notBigAttr = Math.max(+cardAttr1, +cardAttr2, +cardAttr3) <= maxAttr;
+    const validTotaAttrSum = (+cardAttr1 + +cardAttr2 + +cardAttr3) <= maxTotalAttr;
     const validAttr = notSmallAttr && notBigAttr && validTotaAttrSum;
 
-    const allValid = !(name && description && image && validAttr);
+    const allValid = !(cardName && cardDescription && cardImage && validAttr);
 
     this.setState({
       isSaveButtonDisabled: allValid,
@@ -58,23 +58,31 @@ class App extends React.Component {
 
   onSaveButtonClick = (event) => {
     event.preventDefault();
-    const { name,
-      description,
-      attr1,
-      attr2,
-      attr3,
-      image,
-      rare,
-      trunfo,
+    const { cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo,
       cards,
     } = this.state;
 
-    const card = { name, description, attr1, attr2, attr3, image, rare, trunfo };
+    const card = {
+      cardName,
+      cardDescription,
+      cardAttr1,
+      cardAttr2,
+      cardAttr3,
+      cardImage,
+      cardRare,
+      cardTrunfo };
     const newCards = cards;
     newCards.push(card);
     this.setState({
       cardName: '',
-      cardDscription: '',
+      cardDescription: '',
       cardAttr1: '0',
       cardAttr2: '0',
       cardAttr3: '0',

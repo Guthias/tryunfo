@@ -22,9 +22,8 @@ export default class Deck extends Component {
     const filteredCards = trunfoFilter
       ? cards.filter(({ trunfo }) => trunfo)
       : cards
-        .filter(({ name }) => name.includes(nameFilter))
-        .filter(({ rare }) => !rarityFilter || rare === rarityFilter);
-    console.log(filteredCards);
+        .filter(({ cardName }) => cardName.includes(nameFilter))
+        .filter(({ cardRare }) => !rarityFilter || cardRare === rarityFilter);
 
     return (
       <div className="deck-area">
@@ -72,18 +71,11 @@ export default class Deck extends Component {
         <div className="deck-cards">
           {
             filteredCards
-              .map(({ name, description, attr1, attr2, attr3, image, rare, trunfo }) => (
+              .map((card) => (
                 <CardOnDeck
-                  key={ name }
-                  cardName={ name }
-                  cardDescription={ description }
-                  cardAttr1={ attr1 }
-                  cardAttr2={ attr2 }
-                  cardAttr3={ attr3 }
-                  cardImage={ image }
-                  cardRare={ rare }
-                  cardTrunfo={ trunfo }
-                  deleteCard={ () => deleteCard(name) }
+                  key={ card.cardName }
+                  { ...card }
+                  deleteCard={ () => deleteCard(card.cardName) }
                 />))
           }
         </div>
@@ -94,14 +86,14 @@ export default class Deck extends Component {
 
 Deck.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    attr1: PropTypes.string.isRequired,
-    attr2: PropTypes.string.isRequired,
-    attr3: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    rare: PropTypes.string.isRequired,
-    trunfo: PropTypes.bool.isRequired,
+    cardName: PropTypes.string.isRequired,
+    cardDescription: PropTypes.string.isRequired,
+    cardAttr1: PropTypes.string.isRequired,
+    cardAttr2: PropTypes.string.isRequired,
+    cardAttr3: PropTypes.string.isRequired,
+    cardImage: PropTypes.string.isRequired,
+    cardRare: PropTypes.string.isRequired,
+    cardTrunfo: PropTypes.bool.isRequired,
   })).isRequired,
   deleteCard: PropTypes.func.isRequired,
 };
