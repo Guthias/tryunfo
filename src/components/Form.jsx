@@ -60,7 +60,7 @@ export default class Form extends Component {
         />
         <Input
           type="number"
-          title="Attr01"
+          title="Attack"
           id="attr1"
           inline
           value={ cardAttr1 }
@@ -68,7 +68,7 @@ export default class Form extends Component {
         />
         <Input
           type="number"
-          title="Attr02"
+          title="Defense"
           id="attr2"
           inline
           value={ cardAttr2 }
@@ -76,7 +76,7 @@ export default class Form extends Component {
         />
         <Input
           type="number"
-          title="Attr03"
+          title="Speed"
           id="attr3"
           inline
           value={ cardAttr3 }
@@ -85,7 +85,6 @@ export default class Form extends Component {
         <Input
           title="Imagem"
           id="image"
-          inline
           value={ cardImage }
           onchange={ onInputChange }
         />

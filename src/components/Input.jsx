@@ -12,7 +12,9 @@ export default class Input extends Component {
     return (
       <div>
         <label className={ `create-card-label ${this.isInline(inline)}` } htmlFor={ id }>
-          { title }
+          <span className="create-card-label-content">
+            { title }
+          </span>
 
           {
             type === 'textarea'

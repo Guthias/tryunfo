@@ -57,6 +57,10 @@ code {
   gap: 10px;
 }
 
+.create-card-label.inline .create-card-label-content {
+  width: 200%;
+}
+
 .form-button {
   background-color: #CE2211;
   width: 100%;
