@@ -20,7 +20,7 @@ export default class Deck extends Component {
     const { nameFilter, rarityFilter, trunfoFilter } = this.state;
     const { cards, deleteCard } = this.props;
     const filteredCards = trunfoFilter
-      ? cards.filter(({ trunfo }) => trunfo)
+      ? cards.filter(({ cardTrunfo }) => cardTrunfo)
       : cards
         .filter(({ cardName }) => cardName.includes(nameFilter))
         .filter(({ cardRare }) => !rarityFilter || cardRare === rarityFilter);
