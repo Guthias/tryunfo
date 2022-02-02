@@ -7,7 +7,7 @@ export default class Card extends Component {
     switch (rarity) {
     case 'raro': return 'rare';
     case 'muito raro': return 'epic';
-    default: return '';
+    default:
     }
   }
 
