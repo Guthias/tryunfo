@@ -9,6 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 code {
@@ -33,6 +34,7 @@ code {
 }
 
 .create-card-textarea {
+  font-family: unset;
   border: 1px solid black;
   resize: none;
   height: 100px;
