@@ -5,26 +5,22 @@ import Select from './Select';
 import Checkbox from './Checkbox';
 
 export default class Form extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      selectOptions: [
-        {
-          value: 'normal',
-          text: 'Normal',
-        },
-        {
-          value: 'raro',
-          text: 'Raro',
-        },
-        {
-          value: 'muito raro',
-          text: 'Muito Raro',
-        },
-      ],
-    };
-  }
+  state = {
+    selectOptions: [
+      {
+        value: 'normal',
+        text: 'Normal',
+      },
+      {
+        value: 'raro',
+        text: 'Raro',
+      },
+      {
+        value: 'muito raro',
+        text: 'Muito Raro',
+      },
+    ],
+  };
 
   render() {
     const { selectOptions } = this.state;
