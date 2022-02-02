@@ -96,7 +96,7 @@ class App extends React.Component {
   verifyTrunfo = () => {
     const { cards } = this.state;
     this.setState({
-      hasTrunfo: cards.some(({ trunfo }) => trunfo),
+      hasTrunfo: cards.some(({ cardTrunfo }) => cardTrunfo),
     });
   }
 
