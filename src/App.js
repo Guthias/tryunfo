@@ -9,14 +9,14 @@ class App extends React.Component {
     super();
 
     this.state = {
-      name: '',
-      description: '',
-      attr1: '0',
-      attr2: '0',
-      attr3: '0',
-      image: '',
-      rare: 'normal',
-      trunfo: false,
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
       isSaveButtonDisabled: true,
       cards: [],
       hasTrunfo: false,
@@ -73,14 +73,14 @@ class App extends React.Component {
     const newCards = cards;
     newCards.push(card);
     this.setState({
-      name: '',
-      description: '',
-      attr1: '0',
-      attr2: '0',
-      attr3: '0',
-      image: '',
-      rare: 'normal',
-      trunfo: false,
+      cardName: '',
+      cardDscription: '',
+      cardAttr1: '0',
+      cardAttr2: '0',
+      cardAttr3: '0',
+      cardImage: '',
+      cardRare: 'normal',
+      cardTrunfo: false,
       cards: newCards,
     }, this.verifyTrunfo);
   }
@@ -99,45 +99,19 @@ class App extends React.Component {
   }
 
   render() {
-    const { name,
-      description,
-      attr1,
-      attr2,
-      attr3,
-      image,
-      rare,
-      trunfo,
-      hasTrunfo,
-      cards,
-      isSaveButtonDisabled } = this.state;
+    const { cards } = this.state;
 
     return (
       <>
         <div className="create-card-area">
           <Form
-            cardName={ name }
-            cardDescription={ description }
-            cardAttr1={ attr1 }
-            cardAttr2={ attr2 }
-            cardAttr3={ attr3 }
-            cardImage={ image }
-            cardRare={ rare }
-            cardTrunfo={ trunfo }
-            hasTrunfo={ hasTrunfo }
-            isSaveButtonDisabled={ isSaveButtonDisabled }
+            { ...this.state }
             onInputChange={ this.onInputChange }
             onSaveButtonClick={ this.onSaveButtonClick }
           />
           <div className="card-preview-area">
             <Card
-              cardName={ name }
-              cardDescription={ description }
-              cardAttr1={ attr1 }
-              cardAttr2={ attr2 }
-              cardAttr3={ attr3 }
-              cardImage={ image }
-              cardRare={ rare }
-              cardTrunfo={ trunfo }
+              { ...this.state }
             />
           </div>
         </div>

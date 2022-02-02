@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Checkbox extends Component {
   render() {
-    const { title, id, onchange, checked } = this.props;
+    const { title, id, onchange, checked, dataId } = this.props;
 
     return (
       <div>
@@ -13,7 +13,7 @@ export default class Checkbox extends Component {
             type="checkbox"
             checked={ checked }
             id={ id }
-            data-testid={ `${id}-input` }
+            data-testid={ dataId }
             onChange={ onchange }
           />
           { title }
@@ -25,6 +25,7 @@ export default class Checkbox extends Component {
 
 Checkbox.propTypes = {
   id: PropTypes.string.isRequired,
+  dataId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   checked: PropTypes.bool.isRequired,
   onchange: PropTypes.func.isRequired,

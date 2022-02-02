@@ -7,7 +7,7 @@ export default class Input extends Component {
   }
 
   render() {
-    const { title, id, type, inline, value, onchange } = this.props;
+    const { title, id, type, inline, dataId, value, onchange } = this.props;
 
     return (
       <div>
@@ -23,7 +23,7 @@ export default class Input extends Component {
                   className="create-card-textarea"
                   id={ id }
                   value={ value }
-                  data-testid={ `${id}-input` }
+                  data-testid={ dataId }
                   onChange={ onchange }
                 />)
               : (
@@ -33,7 +33,7 @@ export default class Input extends Component {
                   value={ value }
                   id={ id }
                   onChange={ onchange }
-                  data-testid={ `${id}-input` }
+                  data-testid={ dataId }
                 />)
           }
         </label>
@@ -50,6 +50,7 @@ Input.defaultProps = {
 Input.propTypes = {
   type: PropTypes.string,
   id: PropTypes.string.isRequired,
+  dataId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   onchange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,

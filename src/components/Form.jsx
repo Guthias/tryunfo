@@ -47,21 +47,24 @@ export default class Form extends Component {
       <form className="create-card-form">
         <Input
           title="Nome"
-          id="name"
+          id="cardName"
+          dataId="name-input"
           value={ cardName }
           onchange={ onInputChange }
         />
         <Input
           type="textarea"
           title="Descrição"
-          id="description"
+          id="cardDescription"
+          dataId="description-input"
           value={ cardDescription }
           onchange={ onInputChange }
         />
         <Input
           type="number"
           title="Attack"
-          id="attr1"
+          id="cardAttr1"
+          dataId="attr1-input"
           inline
           value={ cardAttr1 }
           onchange={ onInputChange }
@@ -69,7 +72,8 @@ export default class Form extends Component {
         <Input
           type="number"
           title="Defense"
-          id="attr2"
+          id="cardAttr2"
+          dataId="attr2-input"
           inline
           value={ cardAttr2 }
           onchange={ onInputChange }
@@ -77,20 +81,23 @@ export default class Form extends Component {
         <Input
           type="number"
           title="Speed"
-          id="attr3"
+          id="cardAttr3"
+          dataId="attr3-input"
           inline
           value={ cardAttr3 }
           onchange={ onInputChange }
         />
         <Input
           title="Imagem"
-          id="image"
+          id="cardImage"
+          dataId="image-input"
           value={ cardImage }
           onchange={ onInputChange }
         />
         <Select
           title="Raridade"
-          id="rare"
+          id="cardRare"
+          dataId="rare-input"
           onchange={ onInputChange }
           selected={ cardRare }
           options={ selectOptions }
@@ -101,7 +108,8 @@ export default class Form extends Component {
               title="Super Trunfo"
               checked={ cardTrunfo }
               onchange={ onInputChange }
-              id="trunfo"
+              id="cardTrunfo"
+              dataId="trunfo-input"
             />)}
         <button
           className="form-button"

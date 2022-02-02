@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class Select extends Component {
   render() {
-    const { id, title, options, selected, onchange } = this.props;
+    const { id, title, options, selected, onchange, dataId } = this.props;
 
     return (
       <div>
@@ -13,7 +13,7 @@ export default class Select extends Component {
             className="create-card-select"
             id={ id }
             value={ selected }
-            data-testid={ `${id}-input` }
+            data-testid={ dataId }
             onChange={ onchange }
           >
             { options.map(({ value: optValue, text }) => (
@@ -28,6 +28,7 @@ export default class Select extends Component {
 
 Select.propTypes = {
   id: PropTypes.string.isRequired,
+  dataId: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   selected: PropTypes.string.isRequired,
   onchange: PropTypes.func.isRequired,
